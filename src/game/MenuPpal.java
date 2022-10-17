@@ -17,7 +17,7 @@ public class MenuPpal extends JFrame {
     public MenuPpal() {
         super("Maze Runner");
         setSize(Constantes.ANCHO_VENTANA_PPAL, Constantes.LARGO_VENTANA_PPAL);
-        //setResizable(false);
+        setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 

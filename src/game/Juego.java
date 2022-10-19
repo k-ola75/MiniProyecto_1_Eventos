@@ -11,9 +11,6 @@ public class Juego extends JPanel {
     public Juego() {
         super();
         setSize(Constantes.ANCHO_VENTANA_PPAL, Constantes.LARGO_VENTANA_PPAL);
-        //setLocation(300,200);
-        //setResizable(false);
-        //setDefaultCloseOperation(EXIT_ON_CLOSE);
         puntos = 0;
 
         Constantes.ALTURA_BARRA_TAREAS = this.getInsets().top;
@@ -52,7 +49,6 @@ public class Juego extends JPanel {
 
     public boolean cambiarNivel(Laberinto laberinto){
         if(laberinto.nivel1.getMapa(laberinto.jugador1.x/25,laberinto.jugador1.y/25).equals("f")){
-            //System.out.println("finish");
             return true;
         }
         else return false;

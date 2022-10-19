@@ -36,7 +36,6 @@ public class MenuPpal extends JFrame {
         ImageIcon logo = new ImageIcon(imagen2);
         this.setIconImage(logo.getImage());//cambia ícono del frame
 
-        //Image img = fondo.getImage();
         JLabel labelFondo = new JLabel(fondo);
         setContentPane(labelFondo);
 
@@ -54,32 +53,10 @@ public class MenuPpal extends JFrame {
         restricciones.gridy = 0;
         restricciones.gridwidth = 1;
         restricciones.gridheight = 1;
-        //restricciones.fill = GridBagConstraints.BASELINE;
-        //jugar.setAlignmentX(Component.CENTER_ALIGNMENT);
-        //jugar.setAlignmentY(Component.BOTTOM_ALIGNMENT);
         panel.add(jugar, restricciones);
-
-        //JButton boton2 = new JButton ("Salir");
-        /*restricciones.gridx = 0;
-        restricciones.gridy = 1;
-        restricciones.gridwidth = 1;
-        restricciones.gridheight = 1;
-        panel.add (boton2, restricciones);*/
-        /*boton2.setAlignmentX(Component.CENTER_ALIGNMENT);
-        boton2.setAlignmentY(Component.CENTER_ALIGNMENT);
-        panel.add (boton2);*/
-
-
-        //JButton boton4 = new JButton ("Boton 4");
-        /*restricciones.gridx = 0;
-        restricciones.gridy = 2;
-        restricciones.gridwidth = 1;
-        restricciones.gridheight = 1;
-        panel.add (boton4, restricciones);*/
-
+        
         jugar.addActionListener(ActionEvent -> {
             juego = new Juego();
-            /*restricciones.gridx = 0;
             restricciones.gridy = 0;
             restricciones.gridwidth = 1;
             restricciones.gridheight = 1;

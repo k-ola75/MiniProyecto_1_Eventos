@@ -1,5 +1,4 @@
 package game;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -35,12 +34,15 @@ public class Juego extends JPanel {
         this.add(laberinto);
 
         reloj = new Timer(40, actionEvent -> {
+            laberinto.repaint();
             if(cambiarNivel(laberinto)){
                 puntos++;
                 pointsTextField.setText(""+puntos);
                 reloj.stop();
+                JOptionPane.showMessageDialog(null,"Felicidades, Superaste la prueba");
+                System.exit(0);
             }
-            laberinto.repaint();
+
         });
 
         reloj.start();

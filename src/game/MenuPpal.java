@@ -57,12 +57,6 @@ public class MenuPpal extends JFrame {
         
         jugar.addActionListener(ActionEvent -> {
             juego = new Juego();
-            restricciones.gridy = 0;
-            restricciones.gridwidth = 1;
-            restricciones.gridheight = 1;
-            restricciones.weightx = 0.5;
-            restricciones.weighty = 0.5;
-            restricciones.fill = GridBagConstraints.NORTHWEST;*/
             panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
             panel.removeAll();

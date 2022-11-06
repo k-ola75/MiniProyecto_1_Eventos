@@ -13,7 +13,6 @@ public class Mapas {
 
 
     public Mapas() {
-
         abrirArchivo();
         leerArchivo();
         cerrarArchivo();
@@ -21,7 +20,7 @@ public class Mapas {
 
     private void abrirArchivo() {
         try {
-            archivoEntrada = new Scanner(new File("./niveles/nivel1.txt"));
+            archivoEntrada = new Scanner(new File("./src/niveles/nivel1.txt"));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }

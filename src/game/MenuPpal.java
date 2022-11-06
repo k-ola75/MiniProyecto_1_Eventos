@@ -13,27 +13,14 @@ public class MenuPpal extends JFrame {
     public Juego juego;
     private BufferedImage imagen = null;
     private BufferedImage imagen2 = null;
+    private ImageIcon fondo, logo;
 
     public MenuPpal() {
         super("Maze Runner");
         setSize(Constantes.ANCHO_VENTANA_PPAL, Constantes.LARGO_VENTANA_PPAL);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-
-
-        try {
-            File path = new File("./imagenes");
-            imagen = ImageIO.read(new File(path, "maze2.jpg"));
-            File pathLogo = new File("./imagenes");
-            imagen2 = ImageIO.read(new File(path, "logo.jpg"));
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        ImageIcon fondo = new ImageIcon(imagen);
-        ImageIcon logo = new ImageIcon(imagen2);
+        charge_img();
         this.setIconImage(logo.getImage());//cambia ícono del frame
 
         JLabel labelFondo = new JLabel(fondo);
@@ -54,11 +41,10 @@ public class MenuPpal extends JFrame {
         restricciones.gridwidth = 1;
         restricciones.gridheight = 1;
         panel.add(jugar, restricciones);
-        
+
         jugar.addActionListener(ActionEvent -> {
             juego = new Juego();
             panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-
             panel.removeAll();
             juego.setAlignmentX(Component.CENTER_ALIGNMENT);
             panel.add(juego);
@@ -66,5 +52,20 @@ public class MenuPpal extends JFrame {
             this.revalidate();
             this.repaint();
         });
+    }
+
+    private void charge_img(){
+        try {
+            File path = new File("./src/imagenes");
+            imagen = ImageIO.read(new File(path, "maze2.jpg"));
+            File pathLogo = new File("./src/imagenes");
+            imagen2 = ImageIO.read(new File(pathLogo, "logo.jpg"));
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        fondo = new ImageIcon(imagen);
+        logo = new ImageIcon(imagen2);
     }
 }

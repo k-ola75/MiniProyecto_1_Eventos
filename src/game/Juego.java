@@ -27,23 +27,21 @@ public class Juego extends JPanel {
         pointsTextField.setEditable(false);
         this.add(pointsTextField);
 
-        Laberinto laberinto = new Laberinto(reloj);
+        Laberinto laberinto = new Laberinto();
         this.add(laberinto);
 
         reloj = new Timer(40, actionEvent -> {
-            laberinto.repaint();
+
             if(cambiarNivel(laberinto)){
                 puntos++;
                 pointsTextField.setText(""+puntos);
-                reloj.stop();
                 JOptionPane.showMessageDialog(null,"Felicidades, Superaste la prueba");
                 System.exit(0);
             }
-
+        laberinto.repaint();
         });
 
         reloj.start();
-
 
     }
 
@@ -53,4 +51,5 @@ public class Juego extends JPanel {
         }
         else return false;
     }
+
 }

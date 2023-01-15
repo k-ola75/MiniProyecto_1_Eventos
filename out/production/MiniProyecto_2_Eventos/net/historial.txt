@@ -1,0 +1,2 @@
+ganador:jugador de prueba 2
+ganador:prueba2
